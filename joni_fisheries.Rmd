@@ -55,4 +55,4 @@ scale_color_paletteer_d("calecopal::figmtn")
 
 ```
 
-
+![](https://octodex.github.com/images/Sentrytocat_octodex.jpg)
