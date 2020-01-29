@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 library(tidyverse)
 library(here)
 library(janitor)
+library(paletteer)
 ```
 
 Read in noaa_landings.csv:
@@ -44,8 +45,17 @@ From 'salmon_us_annual', create a line graph with year on x-axis, and tot_value 
 Hint: remember groupings
 
 ```{r}
+
+
 ggplot(data=salmon_us_annual, aes(x=year, y=tot_value, group=subgroup)) + 
-  geom_line(aes(color=tot_value))
+  geom_line(aes(color=subgroup)) +
+  theme_bw() +
+  labs(x="Year",
+       y="US commercial salmon value (USD)", 
+       title="my awesome graph") +
+  scale_color_paletteer_d("calecopal::figmtn")
+
+# calecopal figmtn
 ```
 
 
